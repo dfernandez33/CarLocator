@@ -1,0 +1,25 @@
+<mat-spinner *ngIf="fetchingData" class="spinner"></mat-spinner>
+
+<a *ngIf="!fetchingData" href="https://www.google.com/maps/dir/?api=1&origin={{this.userLocation.lat}}%2C+{{this.userLocation.lng}}&destination={{this.carLocation.lat}}%2C+{{this.carLocation.lng}}">
+  <button type="button" class="btn btn-primary">Open In Google Maps</button>
+</a>
+<div *ngIf="!fetchingData" class="map-wrapper">
+  <agm-map>
+    <agm-direction [origin]="userLocation" [destination]="carLocation" [renderOptions]="renderOptions"></agm-direction>
+    <agm-marker [latitude]="userLocation.lat" [longitude]="userLocation.lng" iconUrl="assets/Images/person.png">
+      <agm-info-window>
+        Your Location<br>
+        {{userAddress}}
+      </agm-info-window>
+    </agm-marker>
+    <agm-marker [latitude]="carLocation.lat" [longitude]="carLocation.lng" [iconUrl]="'assets/Images/car.png'">
+      <agm-info-window>
+        Your Car<br>
+        <a href="https://www.google.com/maps/dir/?api=1&destination={{this.carLocation.lat}}%2C+{{this.carLocation.lng}}">
+          {{carAddress}}
+        </a><br>
+        Last Recorded: {{carLocation.timeStamp | date: 'medium'}}
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
+</div>

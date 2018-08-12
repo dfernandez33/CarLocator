@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.card {
+    margin-bottom: 5%;
+    margin-top: 5%;
+    width:50%; 
+    margin-left: 25%; 
+    margin-right: 25%;
+}
+
+@media only screen and (max-width: 768px) {
+    .card {
+        margin-bottom: 5%;
+        margin-top: 5%;
+        margin-left: 7.5%;
+        margin-right: 7.5%;
+        width: 85%;
+    }
+}

@@ -1,0 +1,23 @@
+.map-wrapper {
+    position:relative;
+    height: 100%;
+    width: 100%;
+}
+agm-map {
+    height: 96vh;
+}
+.spinner{
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px;
+    margin-top: -50px;
+}
+
+@media only screen and (max-width: 768px) {
+    button {
+        width: 100%;
+    }
+}
